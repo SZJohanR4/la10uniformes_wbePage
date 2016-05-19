@@ -1,0 +1,151 @@
+
+body{
+    background-image:  url("../Imagenes/fondo1.jpg") ;
+background-repeat: no-repeat;
+background-size: 100% 100%;
+background-attachment: fixed;
+
+
+}
+
+div#Menu{
+    font-size: 25px;
+    height: 42px;
+    /*    alignment-baseline: central;*/
+    /*    font-family:  cursive;
+    */    text-align: center;
+    color: black;
+    /*    text-shadow: 5px 5px 5px darkgray;
+    */
+    font-weight: bold;
+    background:  #BABFCB;
+    width: 100%;
+    /*    margin: auto;*/
+    border: 1px solid  black;
+
+    line-height: 20px; //Damos 200px de alto para notar el efecto
+}
+
+div#texto{
+
+    width: 80%;
+    height: 200px;
+    background:   #3257BC;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    font-size: 70px;
+    /*       line-height: 90px;*/
+    margin: auto;
+
+}
+
+.boton{
+    background: #3498db;
+    color: #fff;
+    display: inline-block;
+    font-size: 1.25em;
+    margin: 20px;
+    margin-left:  auto;
+    text-align: center;
+    width: 200px;
+    text-decoration: none;
+    box-shadow: 0px 3px 0px #266792;
+    padding: 10px 0px;
+    height: 150px;
+    
+
+}
+.boton:hover{
+    box-shadow: 0px 0px 0px;
+    padding-top: 7px;
+}
+
+.botonImagen{
+   content: "/LogoAPP.png"
+}
+
+div#imagen{
+    width: 10%;
+    height: 10%;
+}
+
+#icono1{
+    width: 100px;
+    height: auto;
+    margin: auto;
+    display: block;
+}
+#icono2{
+    width: 100px;
+    height: auto;
+    margin: auto;
+    display: block;
+}
+#icono3{
+    width: 100px;
+    height: auto;
+    margin: auto;
+    display: block;
+}
+#icono4{
+    width: 50px;
+    height: 50px;
+    margin: auto;
+    display: block;
+}
+
+
+*{
+    padding: 0px;
+     margin: 0px;
+     
+}
+
+#header{
+   
+    margin: auto;
+    width: 600px;
+    font-family: Arial, Helvetica, sans-serif;
+  
+    
+}
+ul, ol{
+    list-style: none;
+    
+    
+}
+
+.nav li a{
+    background:  black;
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    display:block;
+}
+
+.nav li a:hover{
+    background-color:  limegreen;
+    
+}
+
+.nav > li{
+    float: right;
+    
+}
+
+.nav li ul{
+    display:none;
+    position: absolute;
+    min-width: 140px;
+    
+}
+.nav li:hover > ul{
+    display: block;
+}
+.nav li ul li{
+    position:relative;
+/*    right:  -140px;
+    top:0px;*/
+    
+}
