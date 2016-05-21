@@ -20,7 +20,7 @@ and open the template in the editor.
             <header>
                 <h1>La 10 Uniformes</h1>
                 <nav><ul>
-                        <li><a href="indexproveedor.html">Inicio</a></li>
+                        <li><a href="indexproveedor.php">Inicio</a></li>
                     </ul></nav>
             </header>
 
