@@ -83,11 +83,11 @@
 
                                 $link = Conectarse();
 
-                                $result = mysql_query("SELECT idUsuario FROM Usuario where rol ='proveedor' ;", $link);
+                                $result = mysql_query("SELECT idProveedor FROM proveedor ;", $link);
 
                                 echo "<select name='selectproveedor'>";
                                 while ($fila = mysql_fetch_array($result)) {
-                                    echo "<option value='" . $fila['rol'] . "'>" . $fila['rol'] . "</option>";
+                                    echo "<option value='" . $fila['idProveedor'] . "'>" . $fila['idProveedor'] . "</option>";
                                 }
                                 echo "</select>";
                                 ?> 

@@ -13,11 +13,11 @@ include '../Clases/imagenes.php';
 
 
 if (isset($_POST['enviarUniforme'])) {
-
+    
     $iduniforme = $_POST['idUniform'];
     $equipo = $_POST['equipo'];
     $categoria = $_POST['categoria'];
-    $talla = $_POST['talla'];
+    $talla = $_POST['Talla'];
     $precio = $_POST['precio'];
     $tela = $_POST['tela'];
     $descuento = $_POST['descuento'];
@@ -25,14 +25,15 @@ if (isset($_POST['enviarUniforme'])) {
     $clasificacion = $_POST['clasificacion'];
     $descripcion = $_POST['Descripcion'];
     $proveedor = $_POST['selectproveedor'];
+  
 
 
     $uniform = new Uniforme();
     $uniform->insertarUniforme($iduniforme, $equipo, $categoria, $talla,
             $precio, $tela, $descuento,$replica,$replica,$clasificacion,$descripcion,$proveedor);
-    echo '<script language="javascript">
-    window.location = "index.php";
-</script>';
+   // echo '<script language="javascript">
+    //window.location = "index.php";
+//</script>';
 }
 
 if (isset($_POST['enviarImagen'])) {

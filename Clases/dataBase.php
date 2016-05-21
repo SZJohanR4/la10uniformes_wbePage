@@ -18,7 +18,7 @@ class dataBase {
     private $clave;
     private $nombreDB;
 
-    function Database() {
+    function database() {
         $this->servidor = "localhost";
         $this->usuario = "root";
         $this->clave = "";
@@ -31,9 +31,10 @@ class dataBase {
     }
     function insertarUniforme($idUniforme,$equipo,$categoria,$tallas,$precio,$tela,$descuento,$replica_original,$clasificacion,$descripcion,$idproveedor) {
 
-        mysql_query(" insert into uniforme (idUniforme,equipo,categoria,tallas,precio,tela,descuento,replica/original,clasificacion,idProveedor,descripcion) values "
+        $a=("insert into uniformes (idUniforme,equipo,categoria,tallas,precio,tela,descuento,replica_original,clasificacion,idProveedor,descripcion) values "
                 . "('" . $idUniforme . "','" . $equipo . "','" . $categoria . "','" . $tallas . "','" . $precio . "','" . $tela . "','" . $descuento . "','" . $replica_original . "','" . $clasificacion . "','" . $idproveedor . "','" . $descripcion . "');")
                 or die("la consulta fallo" . mysql_error());  
+        echo "$a";
     }
     
     
