@@ -1,0 +1,185 @@
+@media screen and(min-width:961px){
+    html, body{
+        font-size: 80%;
+    }
+    input,textarea,select,table{
+        width: 80%;
+        font-size: 80%;
+
+    }
+
+}
+@media screen and(max-width:960px){
+    html, body{
+        font-size: 80%;
+    }
+    input,textarea,select,table{
+        width:80%;
+        font-size: 80%;
+    }
+
+}
+
+@media screen and (max-width:720px){
+    html,body{
+        font-size: 80%;
+    }
+    input,textarea,select,table{
+        width: 80%;
+        font-size: 80%;
+    }
+    
+}
+@media screen and (max-width:1000px){
+    html,body{
+        font-size: 80%;
+    }
+    input,textarea,select,table{
+        width: 80%;
+        font-size: 80%;
+    }
+    
+}
+
+@media screen and (max-width:1300px){
+    html,body{
+        font-size: 80%;
+    }
+    input,textarea,select,table{
+        width: 80%;
+        font-size: 80%;
+    }
+    
+}
+
+div#web{
+
+    background-color:  #ffffff;
+    width: 70%;
+    margin: auto;
+    height: 70%;
+
+}
+
+header{
+    text-align:left;
+    color: red;
+    text-align-last: center;
+    font-weight:bold;
+    background-color: aqua;
+    width: 100%;
+    height: 10%;
+
+}
+div#espacio{
+    width: 100%;
+    height: 5%;
+    background-color: dimgray;
+}
+div#espacio2{
+    width: 100%;
+    height: 5%;
+    background-color:dimgray;
+}
+div#nombreFormulario{
+    width: 100%;
+    height: 5%;
+    background-color:aqua;
+    font-weight:bold;
+    color: brown;
+}
+header img{
+    width: 100%;
+    height: 115%;
+}
+
+nav{
+
+    background-color:aqua;
+    color:  crimson;
+    width: 100%;
+    height: 5%;
+
+
+}
+nav ul{
+    list-style: none;
+
+
+}
+nav li{
+    float: left;
+    width: 25%;
+}
+
+nav ul li a{
+    padding:10px 20px;
+    display: block;
+    color:black;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    background:#75acec;
+}
+div#paso1{
+    background-color: #006666;
+    width: 100%;
+    height: 50%;
+  font-family: fantasy; 
+
+}
+div#paso2{
+    background-color: #006666;
+    width: 100%;
+    height: 50%;
+  font-family: fantasy; 
+}
+
+div#paso fieldset datos {
+    padding: 1em;
+    font:80%/1 sans-serif;
+}
+div#paso label datos {
+    float:left;
+    width:25%;
+    margin-right:0.5em;
+    padding-top:0.2em;
+    text-align:right;
+    font-weight:bold;
+}
+div#video{
+    background-color:#006666;
+    width: 35%;
+    height: 50%;
+    float: left;
+
+}
+div#imagen{
+    background-color:#000033;
+    width: 35%;
+    height: 50%;
+    float: left;
+}
+
+
+div#formulario{
+    background-color:#003366;
+    width: 30%;
+    height: 100%;
+    float: right;
+}
+div#texto{
+    background-color: red;
+    width: 70%;
+    height: 50%;
+    float: left;
+}
+footer{
+    background-color: midnightblue;
+    width: 100%;
+    height: 10%;
+}
+span{
+    color:  red;
+}

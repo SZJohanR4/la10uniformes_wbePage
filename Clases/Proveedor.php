@@ -110,10 +110,10 @@ class Proveedor {
         $this->estado = $estado;
     }
 
-    function consultarReservas() {     
+    function consultarReservas() {
         $db=new dataBase();
         $db->conectar();
-        
+       
         $idUniformesReservados= mysql_query("SELECT `idUniforme` FROM `reserva` WHERE `idProveedor`=1");
         //aqui hago los querry a la bd
         
