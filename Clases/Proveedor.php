@@ -10,7 +10,7 @@ include 'dataBase.php';
 
 class Proveedor {
 
-    private $idProveedor=1;
+    private $idProveedor = 1;
     private $nombre;
     private $apellido;
     private $documento;
@@ -106,9 +106,20 @@ class Proveedor {
 
     function consultarReservas() {
 
+
         $db = new dataBase();
         $db->conectar();
         $consulta1 = mysql_query("SELECT `idReserva`, `fecha`, `idUniforme`, `idUsuario`, `precio`, `cantidad` FROM `reserva` WHERE `idProveedor`=$this->idProveedor");
+        $db = new dataBase();
+        $db->conectar();
+
+        $idUniformesReservados = mysql_query("SELECT `idUniforme` FROM `reserva` WHERE `idProveedor`=1");
+        //aqui hago los querry a la bd
+
+
+        return $idUniformesReservados; //este  va a tener todos los datos de la reserva
+        //y quiero mostrarlo en solicitudesReserva.php
+
 
         echo "<center><table border='1'>\n";
         echo "<tr><td>Imagen</td><td>servicio reservado</td><td>nombre usuario</td><td>Costo</td></tr>\n";
@@ -128,21 +139,19 @@ class Proveedor {
     }
 
     function consultarUniformesPublicados() {
-       $db = new dataBase();
+        $db = new dataBase();
         $db->conectar();
-         echo "<center><table border='1'>\n";
+        echo "<center><table border='1'>\n";
         echo "<tr><td>Imagen</td><td>servicio reservado</td><td>nombre usuario</td><td>Costo</td></tr>\n";
         $consulta1 = mysql_query("SELECT `idUniforme`, `equipo`, `categoria`, `tallas`, `precio`, `tela`, `descuento`, `replica/original`, `clasificacion`, `descripcion` FROM `uniformes` WHERE `idProveedor`=$this->idProveedor");
         while ($row = mysql_fetch_row($consulta1)) {
-             $idUniforme = $row[0];
-             $consulta2 = mysql_query("SELECT `imagen` FROM `imagenes` WHERE `idUniforme`=$idUniforme;");
-             while ($row2 = mysql_fetch_row($consulta2)) {
-                 echo"<tr><td><img src='$row2[0]'></td><td>$row[1]</td><td>$row3[0]</td><td>$row[4]</td></tr>";
-             }
+            $idUniforme = $row[0];
+            $consulta2 = mysql_query("SELECT `imagen` FROM `imagenes` WHERE `idUniforme`=$idUniforme;");
+            while ($row2 = mysql_fetch_row($consulta2)) {
+                echo"<tr><td><img src='$row2[0]'></td><td>$row[1]</td><td>$row3[0]</td><td>$row[4]</td></tr>";
+            }
         }
-         echo"</center></table>";
+        echo"</center></table>";
     }
-
-    
 
 }

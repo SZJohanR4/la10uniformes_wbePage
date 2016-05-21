@@ -23,7 +23,7 @@ div#Menu{
     /*    margin: auto;*/
     border: 1px solid  black;
 
-    line-height: 20px; //Damos 200px de alto para notar el efecto
+    line-height: 20px; 
 }
 
 div#texto{
