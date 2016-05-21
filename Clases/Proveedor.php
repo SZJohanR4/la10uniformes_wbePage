@@ -6,10 +6,11 @@
  *
  * @author la10Uniformes
  */
+include 'dataBase.php';
 
 class Proveedor {
 
-    private $idProveedor;
+    private $idProveedor=1;
     private $nombre;
     private $apellido;
     private $documento;
@@ -18,9 +19,6 @@ class Proveedor {
     private $nroCuentaBancaria;
     private $direccion;
     private $estado;
-   
-            
-    
 
     function construct($idProveedor, $nombre, $apellido, $documento, $email, $contraseña, $nroCuentaBancaria, $direccion, $estado) {
         $this->idProveedor = $idProveedor;
@@ -32,11 +30,7 @@ class Proveedor {
         $this->nroCuentaBancaria = $nroCuentaBancaria;
         $this->direccion = $direccion;
         $this->estado = $estado;
-        
     }
-    
-    
-    
 
     function getIdProveedor() {
         return $this->idProveedor;
@@ -110,25 +104,45 @@ class Proveedor {
         $this->estado = $estado;
     }
 
-    function consultarReservas() {     
-        $db=new dataBase();
-        $db->conectar();
-        
-        $idUniformesReservados= mysql_query("SELECT `idUniforme` FROM `reserva` WHERE `idProveedor`=1");
-        //aqui hago los querry a la bd
-        
-        
-        return $idUniformesReservados;//este  va a tener todos los datos de la reserva
-        //y quiero mostrarlo en solicitudesReserva.php
+    function consultarReservas() {
 
+        $db = new dataBase();
+        $db->conectar();
+        $consulta1 = mysql_query("SELECT `idReserva`, `fecha`, `idUniforme`, `idUsuario`, `precio`, `cantidad` FROM `reserva` WHERE `idProveedor`=$this->idProveedor");
+
+        echo "<center><table border='1'>\n";
+        echo "<tr><td>Imagen</td><td>servicio reservado</td><td>nombre usuario</td><td>Costo</td></tr>\n";
+        while ($row = mysql_fetch_row($consulta1)) {
+            $idUniforme = $row[2];
+            $idUsuario = $row[3];
+            $consulta2 = mysql_query("SELECT `imagen` FROM `imagenes` WHERE `idUniforme`=$idUniforme;");
+            while ($row2 = mysql_fetch_row($consulta2)) {
+
+                $consulta3 = mysql_query("select `nombre` from usuarios where idUsuario=$idUsuario ");
+                while ($row3 = mysql_fetch_row($consulta3)) {
+                    echo"<tr><td><img src='$row2[0]'></td><td>$row[1]</td><td>$row3[0]</td><td>$row[4]</td></tr>";
+                }
+            }
+        }
+        echo"</center></table>";
     }
 
     function consultarUniformesPublicados() {
-        
+       $db = new dataBase();
+        $db->conectar();
+         echo "<center><table border='1'>\n";
+        echo "<tr><td>Imagen</td><td>servicio reservado</td><td>nombre usuario</td><td>Costo</td></tr>\n";
+        $consulta1 = mysql_query("SELECT `idUniforme`, `equipo`, `categoria`, `tallas`, `precio`, `tela`, `descuento`, `replica/original`, `clasificacion`, `descripcion` FROM `uniformes` WHERE `idProveedor`=$this->idProveedor");
+        while ($row = mysql_fetch_row($consulta1)) {
+             $idUniforme = $row[0];
+             $consulta2 = mysql_query("SELECT `imagen` FROM `imagenes` WHERE `idUniforme`=$idUniforme;");
+             while ($row2 = mysql_fetch_row($consulta2)) {
+                 echo"<tr><td><img src='$row2[0]'></td><td>$row[1]</td><td>$row3[0]</td><td>$row[4]</td></tr>";
+             }
+        }
+         echo"</center></table>";
     }
 
-    function mostrarProveedores() {
-        
-    }
+    
 
 }

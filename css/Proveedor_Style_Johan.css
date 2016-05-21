@@ -35,17 +35,7 @@ h1{
     margin: 2%;
 }
 
-#imgCampo{
-    background: white;
-    width: 20%;
-    height: 95%;
-    float: left;
-    
-}
-
-#info{
-     background: white;
-    width: 78%;
-    height: 95%;
-    float: right;
+img{
+    width: 90%;
+    height: 30%;
 }
