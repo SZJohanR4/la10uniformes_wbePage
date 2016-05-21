@@ -1,0 +1,51 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 18/05/2016, 10:44:16 PM
+    Author     : Desktop
+*/
+header{
+    background: #327bd4;
+    font-family: verdana;
+    color: white;
+}
+
+h1{
+    text-align: center;
+    
+}
+
+#web{
+/*    background: red;*/
+    width: 80%;
+    height: 90%;
+    margin: auto;
+    padding: 2%;
+}
+
+#contenido{
+    background: #ababab;
+    width: 97%;
+    height: 40%;
+    margin: auto; 
+    padding: 2%;
+    margin: 2%;
+}
+
+#imgCampo{
+    background: white;
+    width: 20%;
+    height: 95%;
+    float: left;
+    
+}
+
+#info{
+     background: white;
+    width: 78%;
+    height: 95%;
+    float: right;
+}
