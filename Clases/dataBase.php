@@ -12,7 +12,6 @@
  * @author Desktop
  */
 class dataBase {
-    
 
     private $servidor;
     private $usuario;
@@ -30,4 +29,6 @@ class dataBase {
         $link = mysql_connect($this->servidor, $this->usuario, $this->clave);
         mysql_select_db($this->nombreDB, $link);
     }
+    
+    
 }

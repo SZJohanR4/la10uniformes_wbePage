@@ -22,9 +22,11 @@
             <div id="web">
  <?php
  include '../../Clases/Proveedor.php';
+ $p= new Proveedor();
+ $a=$p->consultarReservas();
  
- $P=new Proveedor();
- $a=$P->consultarReservas();
+
+ echo $a;
  
  
  
