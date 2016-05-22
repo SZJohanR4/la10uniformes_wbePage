@@ -130,6 +130,7 @@ class Proveedor {
 
     function consultarUniformesPublicados() {
         include 'dataBase.php';
+   
         $db = new dataBase();
         $db->conectar();
         echo "<center><table border='1'>\n";
@@ -146,8 +147,8 @@ class Proveedor {
     }
     function consultarUniformes() {
         include 'dataBase.php';
-        $db = new dataBase();
-        $db->conectar();
+        $sc = new dataBase();
+        $sc->conectar();
         echo "<center><table border='1'>\n";
         echo "<tr><td>Imagen</td><td>Equipo</td><td>Categoria</td><td>Talla</td><td>Precio</td><td>Tela</td><td>Descuento</td><td>Replica</td><td>clasificacion</td><td>descripcion</td></tr>\n";
         $consulta1 = mysql_query("SELECT `idUniforme`, `equipo`, `categoria`, `tallas`, `precio`, `tela`, `descuento`, `replica_original`, `clasificacion`, `descripcion` FROM `uniformes`");
