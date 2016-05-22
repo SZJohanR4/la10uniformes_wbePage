@@ -6,7 +6,7 @@
  *
  * @author la10Uniformes
  */
-include 'dataBase.php';
+
 
 class Proveedor {
 
@@ -105,6 +105,7 @@ class Proveedor {
     }
 
     function consultarReservas() {
+        include 'dataBase.php';
         $db = new dataBase();
         $db->conectar();
         echo "<center><table border='1'>\n";      
@@ -126,6 +127,7 @@ class Proveedor {
     }
 
     function consultarUniformesPublicados() {
+        include 'dataBase.php';
         $db = new dataBase();
         $db->conectar();
         echo "<center><table border='1'>\n";
@@ -139,6 +141,11 @@ class Proveedor {
             }
         }
         echo"</center></table>";
+    }
+    
+    
+    function solicitarSubscripcion(){
+        
     }
 
 }
