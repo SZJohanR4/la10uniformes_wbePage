@@ -111,7 +111,12 @@ class Uniforme {
         
     }
 
-    function EliminarUniformes() {
+     function EliminarUniformes($iduniforme) {
+        include '../Clases/dataBase.php';
+        $db = new dataBase();
+        $db->conectar();
+        $db->eliminarUniforme($iduniforme);
+        
         
     }
 
@@ -128,3 +133,6 @@ class Uniforme {
     }
 
 }
+
+
+

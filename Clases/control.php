@@ -11,7 +11,6 @@ include '../Clases/imagenes.php';
 
 
 
-
 if (isset($_POST['enviarUniforme'])) {
     
     $iduniforme = $_POST['idUniform'];
@@ -25,20 +24,28 @@ if (isset($_POST['enviarUniforme'])) {
     $clasificacion = $_POST['clasificacion'];
     $descripcion = $_POST['Descripcion'];
     $proveedor = $_POST['selectproveedor'];
-  
+    
 
 
     $uniform = new Uniforme();
     $uniform->insertarUniforme($iduniforme, $equipo, $categoria, $talla,
-            $precio, $tela, $descuento,$replica,$replica,$clasificacion,$descripcion,$proveedor);
-   // echo '<script language="javascript">
+            $precio, $tela, $descuento,$replica,$clasificacion,$descripcion,$proveedor);
+   
+  //echo '<script language="javascript">
     //window.location = "index.php";
 //</script>';
 }
+if (isset($_POST['eliminarUniforme'])) {
+   
+    $uniforme= $_POST['selectelmiminar'];
+    $uniformes = new Uniforme();
+    $uniformes->EliminarUniformes($uniforme);
+   
+}
+
 
 if (isset($_POST['enviarImagen'])) {
-    $idimagen=$_POST['idimagen'];
-    $nombre = $_FILES['imagen']['name']; //este es el nombre del archivo que acabas de subir
+   $nombre = $_FILES['imagen']['name']; //este es el nombre del archivo que acabas de subir
     $tipo = $_FILES['imagen']['type']; //este es el tipo de archivo que acabas de subir
     $_FILES['imagen']['tmp_name']; //este es donde esta almacenado el archivo que acabas de subir.
     $_FILES['imagen']['size']; //este es el tamaño en bytes que tiene el archivo que acabas de subir.
@@ -58,7 +65,8 @@ if (isset($_POST['enviarImagen'])) {
             //recuerden que deben crear un directorio con este mismo nombre
             //en el mismo lugar donde se encuentra el archivo subir.php
             echo "$tipo";
-            $ruta = "imagenes/" . $_POST['cedula'] . ".jpg";
+           
+            $ruta = "../GUI/imagenes/" .$nombre . ".jpg";
             //comprovamos si este archivo existe para no volverlo a copiar.
             //pero si quieren pueden obviar esto si no es necesario.
             //o pueden darle otro nombre para que no sobreescriba el actual.
@@ -71,12 +79,17 @@ if (isset($_POST['enviarImagen'])) {
             } 
         } 
     }
-    $db = new DataBase();
-    $db->conectar();
-    $db->insertar("clientes", $_POST['nombre'], $_POST['apellido'], $_POST['cedula'], $_POST['fecha'], $_POST['sexo'], $_POST['correo'], $_POST['hijos'], $_POST['cedula'] . ".jpg");
-    include 'index.php';
+    $descripcion=$_POST['Descripcion'];
+    $tipos=$_POST['tipo'];
+    $iduniforme=$_POST['select3'];
+    $idpropietario =$_POST['selectproveedor'];
+    $idimagen=$_POST['idimagen'];
+    
+    $imagen = new imagenes();
+    $imagen->insertarImagen($idimagen, $idpropietario, $iduniforme, $tipos,
+            $nombre, $descripcion);
+   
 }
-
 
 
 ?>

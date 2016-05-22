@@ -31,11 +31,28 @@ class dataBase {
     }
     function insertarUniforme($idUniforme,$equipo,$categoria,$tallas,$precio,$tela,$descuento,$replica_original,$clasificacion,$descripcion,$idproveedor) {
 
-        $a=("insert into uniformes (idUniforme,equipo,categoria,tallas,precio,tela,descuento,replica_original,clasificacion,idProveedor,descripcion) values "
+        mysql_query("insert into uniformes (idUniforme,equipo,categoria,tallas,precio,tela,descuento,replica_original,clasificacion,idProveedor,descripcion) values "
                 . "('" . $idUniforme . "','" . $equipo . "','" . $categoria . "','" . $tallas . "','" . $precio . "','" . $tela . "','" . $descuento . "','" . $replica_original . "','" . $clasificacion . "','" . $idproveedor . "','" . $descripcion . "');")
                 or die("la consulta fallo" . mysql_error());  
-        echo "$a";
+        
+        
     }
+     function insertarImagen($idImagen, $idProveedor, $idUniforme, $tipo, $imagen, $descripcion) {
+
+        mysql_query("insert into imagenes (idImagen,idProveedor,idUniforme,tipo,imagen,descripcion) values "
+                . "('" . $idImagen . "','" . $idProveedor . "','" . $idUniforme . "','" . $tipo . "','" . $imagen . "','" . $descripcion . "');")
+                or die("la consulta fallo" . mysql_error());  
+        
+        
+    }
+    function eliminarUniforme($iduniforme) {
+
+        mysql_query("delete from uniformes where idUniforme ='".$iduniforme."'")
+                or die("la consulta fallo" . mysql_error());  
+        
+        
+    }
+    
     
     
 }

@@ -77,16 +77,20 @@ class imagenes {
         $this->descripcion = $descripcion;
     }
 
-    function insertarImagen() {
-        
-    }
-
     function eliminarImagenes() {
         
     }
 
     function verImagenes() {
         
+    }
+
+    function insertarImagen($idImagen, $idProveedor, $idUniforme, $tipo, $imagen, $descripcion) {
+        include '../Clases/dataBase.php';
+        echo"hola";
+        $db = new dataBase();
+        $db->conectar();
+        $db->insertarImagen($idImagen, $idProveedor, $idUniforme, $tipo, $imagen, $descripcion);
     }
 
 }
