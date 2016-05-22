@@ -25,13 +25,13 @@ class Subscripcion extends Sistema_De_Solicitud {
     private $tipo;
     private $precio;
 
-    function solicitarSubscripcion($img,$nombre,$titulo,$descripcion) {
+    function solicitarSubscripcion($img,$id,$titulo,$descripcion) {
        $db=new dataBase();
        $db->conectar();
-        
-       echo $descripcion."   +   ".$nombre."   +  ".$titulo."     +    ".$img;
-        
-        
-        }
+      
+       mysql_query("INSERT INTO `publicidad`(`idProveedor`, `imagen`, `titulo`, `descripcion`) VALUES ('$id','$img','$titulo','$descripcion')")or die("la consulta fallo" . mysql_error());            
+       mysql_close();
+       header ("Location: ../GUI/proveedor/indexproveedor.php");
     }
+  }
 

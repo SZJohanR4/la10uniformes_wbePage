@@ -45,6 +45,12 @@ if (isset($_POST['enviarUniforme'])) {
 
 
     $uniform = new Uniforme();
+
+    $uniform->insertarUniforme($iduniforme, $equipo, $categoria, $talla, $precio, $tela, $descuento, $replica, $replica, $clasificacion, $descripcion, $proveedor);
+    echo '<script language="javascript">
+    window.location = "index.php";
+</script>';
+
     $uniform->insertarUniforme($iduniforme, $equipo, $categoria, $talla,
             $precio, $tela, $descuento,$replica,$clasificacion,$descripcion,$proveedor);
    
@@ -61,11 +67,17 @@ if (isset($_POST['eliminarUniforme'])) {
     window.location = " ../GUI/proveedor/insertarUniforme.php";
 </script>';
    
+
 }
 
 
 if (isset($_POST['enviarImagen'])) {
+
+    $idimagen = $_POST['idimagen'];
+    $nombre = $_FILES['imagen']['name']; //este es el nombre del archivo que acabas de subir
+
    $nombre = $_FILES['imagen']['name']; //este es el nombre del archivo que acabas de subir
+
     $tipo = $_FILES['imagen']['type']; //este es el tipo de archivo que acabas de subir
     $_FILES['imagen']['tmp_name']; //este es donde esta almacenado el archivo que acabas de subir.
     $_FILES['imagen']['size']; //este es el tamaño en bytes que tiene el archivo que acabas de subir.
@@ -95,9 +107,8 @@ if (isset($_POST['enviarImagen'])) {
                 //usamos la variable $resultado para almacenar el resultado del proceso de mover el archivo
                 //almacenara true o false
                 $resultado = @move_uploaded_file($_FILES["imagen"]["tmp_name"], $ruta);
-                
-            } 
-        } 
+            }
+        }
     }
     $descripcion=$_POST['Descripcion'];
     $tipos=$_POST['tipo'];
@@ -106,10 +117,37 @@ if (isset($_POST['enviarImagen'])) {
     $idimagen=$_POST['idimagen'];
     
     $imagen = new imagenes();
-    $imagen->insertarImagen($idimagen, $idpropietario, $iduniforme, $tipos,
-            $ruta, $descripcion);
-    echo '<script language="javascript">
+    $imagen->insertarImagen($idimagen, $idpropietario, $iduniforme, $tipos,$ruta, $descripcion);
+      echo '<script language="javascript">
     window.location = " ../GUI/proveedor/insertarUniforme.php";
 </script>';
-   
+
+  
 }
+
+if (isset($_POST['enviarSolicitudPublicidad'])) {
+    include '../Clases/Subscripcion.php';
+    $subscripcion = new Subscripcion();
+
+
+    $id = $_POST['idI'];
+    $titulo = $_POST['tituloI'];
+    $descripcion = $_POST['descripcionI'];
+    
+    
+    $uploads_dir = "../uniformes/";
+    $idProveedor="../uniformes/". $_POST['idI'].".jpg";
+    $tmp_name=$_FILES["fotografia"]["tmp_name"];
+    $name=$_FILES["fotografia"]["name"];
+    $sd="../uniformes/".$name;//ruta donde queda guardada la imagen
+
+    $prueba=move_uploaded_file($tmp_name, $uploads_dir.$name);
+    rename($sd, $idProveedor);//renombro la imagen con el id que entre el proveedor 
+    
+   
+$subscripcion->solicitarSubscripcion($sd,$id,$titulo,$descripcion);   
+      
+ 
+}
+?>
+
