@@ -13,6 +13,7 @@ and open the template in the editor.
     <body>
         <a href="solicitudesReserva.php">verReservas</a>
         <a href="uniformesPublicados.php">consultarUniformesPublicados</a>
+        <a href="solicitarSuscripcion.php">suscripcion</a>
         
     </body>
 </html>

@@ -12,6 +12,7 @@ include '../Clases/imagenes.php';
 
 
 
+
 if (isset($_POST['enviarUniforme'])) {
 
     $iduniforme = $_POST['idUniform'];
@@ -76,6 +77,21 @@ if (isset($_POST['enviarImagen'])) {
     include 'index.php';
 }
 
-
+if(isset($_POST['enviarSolicitudPublicidad'])){
+    include '../Clases/Subscripcion.php';
+    $subscripcion =new Subscripcion();
+    
+    
+    $idProveedor=$_POST['idI'];
+    $titulo=$_POST['tituloI'];
+    $descripcion=$_POST['descripcionI'];
+    $foto="este es el link de la foto";
+    
+    
+    
+    $subscripcion->solicitarSubscripcion($idProveedor,$titulo,$descripcion,$foto);
+    
+          
+}
 
 ?>
