@@ -4,6 +4,29 @@ include '../Clases/Uniforme.php';
 include '../Clases/Proveedor.php';
 include '../Clases/imagenes.php';
 
+if (isset($_POST['enviarProveedor'])) {
+    
+    $idProveedor = $_POST['idProveedor'];
+    $nombre= $_POST['nombre'];
+    $apellido = $_POST['apellido'];
+    $documento = $_POST['documento'];
+    $correo = $_POST['correo'];
+    $contrasena = $_POST['contrasena'];
+    $cuenta = $_POST['cuenta'];
+    $direccion = $_POST['direccion'];
+    $estado = $_POST['estado'];
+    
+    
+
+
+    $proveedor = new Proveedor();
+     $proveedor->insertarProveedor($idProveedor, $nombre, $apellido, $documento, $correo, $contrasena, $cuenta, $direccion, $estado);
+   
+   
+  echo '<script language="javascript">
+    window.location = " ../GUI/proveedor/insertarUniforme.php";
+</script>';
+}
 
 if (isset($_POST['enviarUniforme'])) {
     
@@ -63,7 +86,7 @@ if (isset($_POST['enviarImagen'])) {
             //en el mismo lugar donde se encuentra el archivo subir.php
        
            
-            $ruta = "../GUI/imagenes/" .$nombre;
+            $ruta = "../../GUI/imagenes/" .$nombre;
             //comprovamos si este archivo existe para no volverlo a copiar.
             //pero si quieren pueden obviar esto si no es necesario.
             //o pueden darle otro nombre para que no sobreescriba el actual.

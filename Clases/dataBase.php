@@ -45,6 +45,14 @@ class dataBase {
         
         
     }
+    function insertarProveedor($idProveedor,$nombre,$apellido,$documento,$email,$contrasena,$cuenta,$direccion,$estado) {
+
+        mysql_query("insert into proveedor (idProveedor,nombre,apellido,documento,email,contrasena,nroCuentaBancaria,direccion,estado) values "
+                . "('" . $idProveedor . "','" . $nombre . "','" . $apellido . "','" . $documento . "','" . $email . "','" . $contrasena . "','" . $cuenta . "','" . $direccion . "','" . $estado . "');")
+                or die("la consulta fallo" . mysql_error());  
+        
+        
+    }
     function eliminarUniforme($iduniforme) {
 
         mysql_query("delete from uniformes where idUniforme ='".$iduniforme."'")

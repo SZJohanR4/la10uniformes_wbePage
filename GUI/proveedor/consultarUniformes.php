@@ -35,7 +35,7 @@ and open the template in the editor.
                     include '../../Clases/Proveedor.php';
                     $datos = array();
                     $p = new Proveedor();
-                    $p->consultarUniformesPublicados();
+                    $p->consultarUniformes();
                     ?>
 
                 </div>

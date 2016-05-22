@@ -10,9 +10,11 @@
 <body>
 
     <div id="web">
-        <a href="eliminarUniformes.php" target="_blank">Eliminar uniformes</a>
+          <a href="eliminarUniformes.php" target="_blank">Eliminar uniformes</a>
         <a href="insertarUniforme.php" target="_blank">Insertar Uniforme</a>
         <a href="salirSistema.php" target="_blank">Salir Sistema</a>
+        <a href="insertarProveedores.php" target="_blank">Insertar Proveedore</a>
+        <a href="uniformesPublicados.php" target="_blank">Consultar uniformes</a>
         <header>
            Proveedor
 
@@ -99,7 +101,7 @@
                     </table>
                 </fieldset>
                 <br>
-                <input type="submit" name="enviarUniforme" value="Enviar Cliente">  
+                <input type="submit" name="enviarUniforme" value="Enviar Uniforme">  
 
             </form>
         </div>
