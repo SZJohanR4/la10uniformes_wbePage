@@ -42,7 +42,7 @@
                         <tr>
                            
                             <td><pre style='display:inline'>&#09;</pre></td>
-                            <td> <label for="Proveedor">proveedor : </label> <span>*</span></td>
+                            <td> <label for="Proveedor">Uniforme: </label> <span>*</span></td>
                             <td> 
                                 <?php
                                 include("../../conexion.php");
@@ -64,6 +64,6 @@
                     </table>
                 </fieldset>
                 <br>
-                <input type="submit" name="eliminarUniforme" value="Enviar Cliente">  
+                <input type="submit" name="eliminarUniforme" value="Uniforme">  
 
             </form>

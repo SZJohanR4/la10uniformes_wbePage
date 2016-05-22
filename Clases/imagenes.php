@@ -20,14 +20,7 @@ class imagenes {
     private $imagen;
     private $descripcion;
 
-    function __construct($idImagen, $idProveedor, $idUniforme, $tipo, $imagen, $descripcion) {
-        $this->idImagen = $idImagen;
-        $this->idProveedor = $idProveedor;
-        $this->idUniforme = $idUniforme;
-        $this->tipo = $tipo;
-        $this->imagen = $imagen;
-        $this->descripcion = $descripcion;
-    }
+    
 
     function getIdImagen() {
         return $this->idImagen;
@@ -87,7 +80,7 @@ class imagenes {
 
     function insertarImagen($idImagen, $idProveedor, $idUniforme, $tipo, $imagen, $descripcion) {
         include '../Clases/dataBase.php';
-        echo"hola";
+        
         $db = new dataBase();
         $db->conectar();
         $db->insertarImagen($idImagen, $idProveedor, $idUniforme, $tipo, $imagen, $descripcion);

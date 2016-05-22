@@ -132,7 +132,7 @@ class Proveedor {
         $db->conectar();
         echo "<center><table border='1'>\n";
         echo "<tr><td>Imagen</td><td>servicio reservado</td><td>nombre usuario</td><td>Costo</td></tr>\n";
-        $consulta1 = mysql_query("SELECT `idUniforme`, `equipo`, `categoria`, `tallas`, `precio`, `tela`, `descuento`, `replica/original`, `clasificacion`, `descripcion` FROM `uniformes` WHERE `idProveedor`=1");
+        $consulta1 = mysql_query("SELECT `idUniforme`, `equipo`, `categoria`, `tallas`, `precio`, `tela`, `descuento`, `replica_original`, `clasificacion`, `descripcion` FROM `uniformes` WHERE `idProveedor`=1");
         while ($row = mysql_fetch_row($consulta1)) {
             $idUniforme = $row[0];
             $consulta2 = mysql_query("SELECT `imagen` FROM `imagenes` WHERE `idUniforme`=$idUniforme;");
