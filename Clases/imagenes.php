@@ -80,6 +80,7 @@ class imagenes {
 
     function insertarImagen($idImagen, $idProveedor, $idUniforme, $tipo, $imagen, $descripcion) {
         include '../Clases/dataBase.php';
+    
         
         $db = new dataBase();
         $db->conectar();

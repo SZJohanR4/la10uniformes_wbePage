@@ -4,6 +4,7 @@ include '../Clases/Uniforme.php';
 include '../Clases/Proveedor.php';
 include '../Clases/imagenes.php';
 
+
 if (isset($_POST['enviarUniforme'])) {
     
     $iduniforme = $_POST['idUniform'];
@@ -24,15 +25,18 @@ if (isset($_POST['enviarUniforme'])) {
     $uniform->insertarUniforme($iduniforme, $equipo, $categoria, $talla,
             $precio, $tela, $descuento,$replica,$clasificacion,$descripcion,$proveedor);
    
-  //echo '<script language="javascript">
-    //window.location = "index.php";
-//</script>';
+  echo '<script language="javascript">
+    window.location = " ../GUI/proveedor/insertarUniforme.php";
+</script>';
 }
 if (isset($_POST['eliminarUniforme'])) {
    
     $uniforme= $_POST['selectelmiminar'];
     $uniformes = new Uniforme();
     $uniformes->EliminarUniformes($uniforme);
+    echo '<script language="javascript">
+    window.location = " ../GUI/proveedor/insertarUniforme.php";
+</script>';
    
 }
 
@@ -80,6 +84,9 @@ if (isset($_POST['enviarImagen'])) {
     
     $imagen = new imagenes();
     $imagen->insertarImagen($idimagen, $idpropietario, $iduniforme, $tipos,
-            $nombre, $descripcion);
+            $ruta, $descripcion);
+    echo '<script language="javascript">
+    window.location = " ../GUI/proveedor/insertarUniforme.php";
+</script>';
    
 }
