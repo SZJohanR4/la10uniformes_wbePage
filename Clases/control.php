@@ -11,23 +11,13 @@ include '../Clases/imagenes.php';
 
 
 
-<<<<<<< HEAD
+
 if (isset($_POST['enviarUniforme'])) {
     
     $iduniforme = $_POST['idUniform'];
     $equipo = $_POST['equipo'];
     $categoria = $_POST['categoria'];
     $talla = $_POST['Talla'];
-=======
-
-
-if (isset($_POST['enviarUniforme'])) {
-
-    $iduniforme = $_POST['idUniform'];
-    $equipo = $_POST['equipo'];
-    $categoria = $_POST['categoria'];
-    $talla = $_POST['talla'];
->>>>>>> origin/master
     $precio = $_POST['precio'];
     $tela = $_POST['tela'];
     $descuento = $_POST['descuento'];
@@ -35,15 +25,11 @@ if (isset($_POST['enviarUniforme'])) {
     $clasificacion = $_POST['clasificacion'];
     $descripcion = $_POST['Descripcion'];
     $proveedor = $_POST['selectproveedor'];
-<<<<<<< HEAD
     
-=======
->>>>>>> origin/master
 
 
     $uniform = new Uniforme();
     $uniform->insertarUniforme($iduniforme, $equipo, $categoria, $talla,
-<<<<<<< HEAD
             $precio, $tela, $descuento,$replica,$clasificacion,$descripcion,$proveedor);
    
   //echo '<script language="javascript">
@@ -61,17 +47,6 @@ if (isset($_POST['eliminarUniforme'])) {
 
 if (isset($_POST['enviarImagen'])) {
    $nombre = $_FILES['imagen']['name']; //este es el nombre del archivo que acabas de subir
-=======
-            $precio, $tela, $descuento,$replica,$replica,$clasificacion,$descripcion,$proveedor);
-    echo '<script language="javascript">
-    window.location = "index.php";
-</script>';
-}
-
-if (isset($_POST['enviarImagen'])) {
-    $idimagen=$_POST['idimagen'];
-    $nombre = $_FILES['imagen']['name']; //este es el nombre del archivo que acabas de subir
->>>>>>> origin/master
     $tipo = $_FILES['imagen']['type']; //este es el tipo de archivo que acabas de subir
     $_FILES['imagen']['tmp_name']; //este es donde esta almacenado el archivo que acabas de subir.
     $_FILES['imagen']['size']; //este es el tamaño en bytes que tiene el archivo que acabas de subir.
@@ -90,13 +65,9 @@ if (isset($_POST['enviarImagen'])) {
             //esta es la ruta donde copiaremos la imagen
             //recuerden que deben crear un directorio con este mismo nombre
             //en el mismo lugar donde se encuentra el archivo subir.php
-            echo "$tipo";
-<<<<<<< HEAD
+       
            
             $ruta = "../GUI/imagenes/" .$nombre . ".jpg";
-=======
-            $ruta = "imagenes/" . $_POST['cedula'] . ".jpg";
->>>>>>> origin/master
             //comprovamos si este archivo existe para no volverlo a copiar.
             //pero si quieren pueden obviar esto si no es necesario.
             //o pueden darle otro nombre para que no sobreescriba el actual.
@@ -109,7 +80,6 @@ if (isset($_POST['enviarImagen'])) {
             } 
         } 
     }
-<<<<<<< HEAD
     $descripcion=$_POST['Descripcion'];
     $tipos=$_POST['tipo'];
     $iduniforme=$_POST['select3'];
@@ -121,30 +91,3 @@ if (isset($_POST['enviarImagen'])) {
             $nombre, $descripcion);
    
 }
-
-=======
-    $db = new DataBase();
-    $db->conectar();
-    $db->insertar("clientes", $_POST['nombre'], $_POST['apellido'], $_POST['cedula'], $_POST['fecha'], $_POST['sexo'], $_POST['correo'], $_POST['hijos'], $_POST['cedula'] . ".jpg");
-    include 'index.php';
-}
-
-if(isset($_POST['enviarSolicitudPublicidad'])){
-    include '../Clases/Subscripcion.php';
-    $subscripcion =new Subscripcion();
-    
-    
-    $idProveedor=$_POST['idI'];
-    $titulo=$_POST['tituloI'];
-    $descripcion=$_POST['descripcionI'];
-    $foto="este es el link de la foto";
-    
-    
-    
-    $subscripcion->solicitarSubscripcion($idProveedor,$titulo,$descripcion,$foto);
-    
-          
-}
->>>>>>> origin/master
-
-?>
