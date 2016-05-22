@@ -22,7 +22,7 @@ and open the template in the editor.
 
         <div id="web">
 
-            <form  method="post" action="../../Clases/control.php" enctype="multipart/form-data">
+            <form  method="POST" action="../../Clases/control.php" enctype="multipart/form-data">
                 <fieldset>
                     <legend>Datos Proveedor</legend>                        
                     <div id="izq">

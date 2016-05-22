@@ -144,8 +144,8 @@ class Proveedor {
     }
     
     
-    function solicitarSubscripcion(){
-        
+    function verComentarios($idUniforme,$idProveedor){
+        //que lleguen los id pa (y)
     }
 
 }

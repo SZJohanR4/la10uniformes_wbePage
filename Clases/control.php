@@ -29,15 +29,14 @@ if (isset($_POST['enviarUniforme'])) {
 
 
     $uniform = new Uniforme();
-    $uniform->insertarUniforme($iduniforme, $equipo, $categoria, $talla,
-            $precio, $tela, $descuento,$replica,$replica,$clasificacion,$descripcion,$proveedor);
+    $uniform->insertarUniforme($iduniforme, $equipo, $categoria, $talla, $precio, $tela, $descuento, $replica, $replica, $clasificacion, $descripcion, $proveedor);
     echo '<script language="javascript">
     window.location = "index.php";
 </script>';
 }
 
 if (isset($_POST['enviarImagen'])) {
-    $idimagen=$_POST['idimagen'];
+    $idimagen = $_POST['idimagen'];
     $nombre = $_FILES['imagen']['name']; //este es el nombre del archivo que acabas de subir
     $tipo = $_FILES['imagen']['type']; //este es el tipo de archivo que acabas de subir
     $_FILES['imagen']['tmp_name']; //este es donde esta almacenado el archivo que acabas de subir.
@@ -67,9 +66,8 @@ if (isset($_POST['enviarImagen'])) {
                 //usamos la variable $resultado para almacenar el resultado del proceso de mover el archivo
                 //almacenara true o false
                 $resultado = @move_uploaded_file($_FILES["imagen"]["tmp_name"], $ruta);
-                
-            } 
-        } 
+            }
+        }
     }
     $db = new DataBase();
     $db->conectar();
@@ -77,21 +75,28 @@ if (isset($_POST['enviarImagen'])) {
     include 'index.php';
 }
 
-if(isset($_POST['enviarSolicitudPublicidad'])){
+if (isset($_POST['enviarSolicitudPublicidad'])) {
     include '../Clases/Subscripcion.php';
-    $subscripcion =new Subscripcion();
-    
-    
-    $idProveedor=$_POST['idI'];
-    $titulo=$_POST['tituloI'];
-    $descripcion=$_POST['descripcionI'];
-    $foto="este es el link de la foto";
-    
-    
-    
-    $subscripcion->solicitarSubscripcion($idProveedor,$titulo,$descripcion,$foto);
-    
-          
-}
+    $subscripcion = new Subscripcion();
 
+
+    $id = $_POST['idI'];
+    $titulo = $_POST['tituloI'];
+    $descripcion = $_POST['descripcionI'];
+    
+    
+    $uploads_dir = "../uniformes/";
+    $idProveedor="../uniformes/". $_POST['idI'].".jpg";
+    $tmp_name=$_FILES["fotografia"]["tmp_name"];
+    $name=$_FILES["fotografia"]["name"];
+    $sd="../uniformes/".$name;//ruta donde queda guardada la imagen
+
+    $prueba=move_uploaded_file($tmp_name, $uploads_dir.$name);
+    rename($sd, $idProveedor);//renombro la imagen con el id que entre el proveedor 
+    
+   
+$subscripcion->solicitarSubscripcion($sd,$id,$titulo,$descripcion);   
+      
+ 
+}
 ?>
