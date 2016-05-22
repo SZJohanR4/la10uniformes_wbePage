@@ -25,18 +25,7 @@ class Uniforme {
     private $descripcion;
     private $idproveedor;
 
-    function __construct($idUniforme, $equipo, $categoria, $tallas, $precio, $tela, $descuento, $replica_original, $clasificacion, $descripcion) {
-        $this->idUniforme = $idUniforme;
-        $this->equipo = $equipo;
-        $this->categoria = $categoria;
-        $this->tallas = $tallas;
-        $this->precio = $precio;
-        $this->tela = $tela;
-        $this->descuento = $descuento;
-        $this->replica_original = $replica_original;
-        $this->clasificacion = $clasificacion;
-        $this->descripcion = $descripcion;
-    }
+  
 
     function getIdUniforme() {
         return $this->idUniforme;
@@ -122,12 +111,17 @@ class Uniforme {
         
     }
 
-    function EliminarUniformes() {
+     function EliminarUniformes($iduniforme) {
+        include '../Clases/dataBase.php';
+        $db = new dataBase();
+        $db->conectar();
+        $db->eliminarUniforme($iduniforme);
+        
         
     }
 
     function insertarUniforme($idUniforme,$equipo,$categoria,$tallas,$precio,$tela,$descuento,$replica_original,$clasificacion,$descripcion,$idproveedor){
-        include './dataBase.php';
+        include '../Clases/dataBase.php';
         $db = new dataBase();
         $db->conectar();
         $db->insertarUniforme($idUniforme,$equipo,$categoria,$tallas,$precio,$tela,$descuento,$replica_original,$clasificacion,$descripcion,$idproveedor);
@@ -139,3 +133,6 @@ class Uniforme {
     }
 
 }
+
+
+
