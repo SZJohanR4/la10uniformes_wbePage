@@ -18,7 +18,7 @@ class dataBase {
     private $clave;
     private $nombreDB;
 
-    function Database() {
+    
 
         function database() {
 
@@ -39,7 +39,7 @@ class dataBase {
                     or die("la consulta fallo" . mysql_error());
         }
 
-    }
+    
 
     function insertarImagen($idImagen, $idProveedor, $idUniforme, $tipo, $imagen, $descripcion) {
 
