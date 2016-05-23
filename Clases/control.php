@@ -46,11 +46,6 @@ if (isset($_POST['enviarUniforme'])) {
 
     $uniform = new Uniforme();
 
-    $uniform->insertarUniforme($iduniforme, $equipo, $categoria, $talla, $precio, $tela, $descuento, $replica, $replica, $clasificacion, $descripcion, $proveedor);
-    echo '<script language="javascript">
-    window.location = "index.php";
-</script>';
-
     $uniform->insertarUniforme($iduniforme, $equipo, $categoria, $talla,
             $precio, $tela, $descuento,$replica,$clasificacion,$descripcion,$proveedor);
    

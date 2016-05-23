@@ -53,6 +53,10 @@ class dataBase {
         mysql_query("insert into proveedor (idProveedor,nombre,apellido,documento,email,contrasena,nroCuentaBancaria,direccion,estado) values "
                         . "('" . $idProveedor . "','" . $nombre . "','" . $apellido . "','" . $documento . "','" . $email . "','" . $contrasena . "','" . $cuenta . "','" . $direccion . "','" . $estado . "');")
                 or die("la consulta fallo" . mysql_error());
+        mysql_query("insert into contrasena (usuario,contrasena,rol) values "
+                        . "('" . $idProveedor . "','" . $contrasena . "','PROVEEDOR');")
+                or die("la consulta fallo" . mysql_error());
+        
     }
 
     function eliminarUniforme($iduniforme) {
