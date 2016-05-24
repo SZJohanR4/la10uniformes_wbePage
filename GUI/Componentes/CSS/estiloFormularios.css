@@ -191,3 +191,33 @@ div#SaltoEspacio{
     height: 70%;
     background-color:red;
 }
+
+
+#subscribir{
+      width:auto;
+    height: auto;
+    color: blue;
+}
+#eliminar{
+     width:auto;
+    height: auto;
+   
+    color: red;
+}
+#modificar{
+      width:auto;
+    height: auto;
+   
+    color: green;
+}
+#activo{
+    width:auto;
+    height: auto;
+    color: green;
+}
+#noactivo{
+    width:auto;
+    height: auto;
+   
+    color: green;
+}

@@ -1,0 +1,81 @@
+html, body{
+    height: 100%;
+}
+
+div#web{
+    width:80%;
+    margin:auto;
+    height:100%;
+}
+header{
+    padding-bottom:4%;
+    padding-top:1%;
+    padding-left:5%;
+    margin-bottom: 1%;
+    color:#FFBC00;
+    width:100%;
+    height:1%;
+    background-color:#474444;
+}
+table{
+    width : 100%;
+    border: 1px solid black;
+    border-collapse: collapse;
+}th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 5px;
+}
+td {
+    text-align: center;
+}
+div#left{
+    background-color: #00d6b2;
+    width:25%;
+    height:40%;
+    float:left;
+}
+div#lefti{
+    padding-top: 1%;
+    width:50%;
+    height:70%;
+    float:left;
+}
+div#righti{
+    padding-top: 1%;
+    width:50%;
+    height:70%;
+    float:left;
+}
+div#right{
+    background-color:   #00d6b2;
+    float:left;
+    width:75%;
+    height:40%;
+}
+
+div#activos{
+    margin-top: 1%;
+    background-color:#00d6b2;
+    float:left;
+    width:100%;
+    height:50%;
+}
+
+
+
+input.formulario{
+    margin: 1%;
+    width: 40%;
+    box-shadow: rgba(0,0,0,.5) 1px 1px 1px 1px inset;
+}
+
+label {
+    width: 20%;
+    float: left;
+    display: inline;
+}
+input.envios{
+    width:50%;
+    display: inline;
+}

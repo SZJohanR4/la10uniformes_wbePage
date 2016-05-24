@@ -3,6 +3,8 @@
 include '../Clases/Uniforme.php';
 include '../Clases/Proveedor.php';
 include '../Clases/imagenes.php';
+include '../Clases/SistemaApp.php';
+include '../Clases/Sistema_De_Solicitud.php';
 
 if (isset($_POST['enviarProveedor'])) {
     
@@ -144,5 +146,17 @@ $subscripcion->solicitarSubscripcion($sd,$id,$titulo,$descripcion);
       
  
 }
+
+// PARTE CONTROL - ELKIN PRADA
+if (isset($_POST['Ingresar'])) {
+
+    $usuario = $_POST['usuario'];
+    $contraseña = $_POST['contraseña'];
+    $ingresar = new SistemaApp();
+    $ingresar->ingresarAlSistema($usuario, $contraseña);
+}
+
+
+
 ?>
 

@@ -10,24 +10,27 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link type="text/css" href="..\..\Componentes\CSS\Inicio_Css.css" rel="stylesheet"><!estilo principal>
-    
+    <link type="text/css" href="..\fonts\fonts.css" rel="stylesheet">
 </head>
 <body>
     <div id="Menu">
- 
-  <ul class ="nav">
-            <li><a href="login.php">Cerrar Sesión</a></li>
 
+        <ul class ="nav">
+
+           
+
+            <li><a href="login.php">Cerrar Sesión</a></li>
+           
             <li><a href="Solicitudes.php">Solicitudes</a>
-        
-                </li>
-       
+
+            </li>
+
 
     </div>
     <div id="texto">
         <div id="imagen">
             <img src="../../Componentes/Imagenes/LogoAPP.png" width="250" alt="">
-            
+
         </div>
         La 10 
         Uniformes 
@@ -37,9 +40,9 @@ and open the template in the editor.
 
     <div id="botones">
         <center>
-            <a href="#" class="boton hover " id ="AdministrarContenido"  >  Consultar y Eliminar Contenido <img src="../../Componentes/Imagenes/iconoUniformes.jpg" id="icono1"></a>
-            <a href="#" class="boton hover" id ="botonRegistrarse"> <br>Publicar Información <img src="../../Componentes/Imagenes/iconoInformacion.jpg" id="icono2"></a>
-            <a href="#" class="boton hover" id ="botonInformacion"><br> Subir Publicidad <img src="../../Componentes/Imagenes/iconoPublicidad.jpg" id="icono3"></a>
+            <a href="Administrar_Contenido.html" class="boton hover " id ="AdministrarContenido"  >  Administrar Contenido <img src="../../Componentes/Imagenes/icono1.jpg" id="icono1"></a>
+            <a href="Administrar_Usuarios.html" class="boton hover" id ="botonRegistrarse">Administrar Usuarios <img src="../../Componentes/Imagenes/icono2.png" id="icono2"></a>
+            <a href="#" class="boton hover" id ="botonInformacion">Realizar Back-up <img src="../../Componentes/Imagenes/icono3.png" id="icono3"></a>
         </center>
     </div>
 </body>
