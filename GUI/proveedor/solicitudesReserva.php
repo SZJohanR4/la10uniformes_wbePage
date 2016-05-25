@@ -25,7 +25,7 @@
                     include '../../Clases/Proveedor.php';
                     $datos = array();
                     $p = new Proveedor();
-                    $p->consultarReservas();
+                    $p->consultarReservas($_GET['id']);
                     ?>
 
                 </div>

@@ -105,7 +105,7 @@ class Proveedor {
         $this->estado = $estado;
     }
 
-    function consultarReservas() {
+    function consultarReservas($idProveedor) {
         include 'dataBase.php';
         $p=new Proveedor();
         $db = new dataBase();
@@ -115,7 +115,7 @@ class Proveedor {
         echo "<center><table border='1'>\n";      
         echo "<tr><td>Imagen</td><td>servicio reservado</td><td>nombre usuario</td><td>Costo</td></tr>\n";
       
-        $consulta1 = mysql_query("SELECT `idReserva`, `fecha`, `idUniforme`, `idUsuario`, `precio`, `cantidad` FROM `reserva` WHERE `idProveedor`=".$p->getIdProveedor());
+        $consulta1 = mysql_query("SELECT `idReserva`, `fecha`, `idUniforme`, `idUsuario`, `precio`, `cantidad` FROM `reserva` WHERE `idProveedor`=$idProveedor");
        
         while ($row = mysql_fetch_row($consulta1)) {
             $idUniforme = $row[2];
@@ -133,14 +133,14 @@ class Proveedor {
         echo"</center></table>";
     }
 
-    function consultarUniformesPublicados() {
+    function consultarUniformesPublicados($idProveedor) {
         include 'dataBase.php';
    
         $db = new dataBase();
         $db->conectar();
         echo "<center><table border='1'>\n";
          echo "<tr><td>Proveedor</td><td>Imagen</td><td>Equipo</td><td>Categoria</td><td>Talla</td><td>Precio</td><td>Tela</td><td>Descuento</td><td>Replica</td><td>clasificacion</td><td>descripcion</td></tr>\n";
-       $consulta1 = mysql_query("SELECT `idUniforme`, `equipo`, `categoria`, `tallas`, `precio`, `tela`, `descuento`, `replica_original`, `clasificacion`, `descripcion` FROM `uniformes` WHERE `idProveedor`=$this->idProveedor");
+       $consulta1 = mysql_query("SELECT `idUniforme`, `equipo`, `categoria`, `tallas`, `precio`, `tela`, `descuento`, `replica_original`, `clasificacion`, `descripcion` FROM `uniformes` WHERE `idProveedor`=$idProveedor");
         while ($row = mysql_fetch_row($consulta1)) {
             $idUniforme = $row[0];
             $consulta2 = mysql_query("SELECT `imagen` FROM `imagenes` WHERE `idUniforme`=$idUniforme;");

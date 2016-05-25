@@ -39,8 +39,8 @@ and open the template in the editor.
         $proveedor->construct($idProveedor, $nombre, $apellido, $documentoProveedor, $email, $password, $nroCuentaBancaria, $direccion, $estado)
  
         ?> 
-        <a href="solicitudesReserva.php">verReservas</a>
-        <a href="uniformesPublicados.php">consultarUniformesPublicados</a>
+        <a href="solicitudesReserva.php?id=<?php echo$idProveedor;?>">verReservas</a>
+        <a href="uniformesPublicados.php?id=<?php echo$idProveedor;?>">consultarUniformesPublicados</a>
         <a href="solicitarSuscripcion.php">suscripcion</a>
         <a href="comentarioUniforme.php">ver Comentarios</a>
         <a href="publicidadAsignada.php">ver publicidadAsignada</a>
