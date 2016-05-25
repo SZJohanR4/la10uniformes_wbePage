@@ -126,7 +126,7 @@ class Proveedor {
                 $consulta3 = mysql_query("select `nombre` from usuarios where idUsuario=$idUsuario ");
                 while ($row3 = mysql_fetch_row($consulta3)) {
                     echo"<tr><td><img src='$row2[0]'></td><td>$row[1]</td><td>$row3[0]</td><td>$row[4]</td></tr>";
-                    
+                    //hola
                 }
             }
         }
