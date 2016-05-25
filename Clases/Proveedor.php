@@ -22,6 +22,7 @@ class Proveedor {
 
     function construct($idProveedor, $nombre, $apellido, $documento, $email, $password, $nroCuentaBancaria, $direccion, $estado) {
         $this->idProveedor =$idProveedor ;
+        $this->idProveedor;
         $this->nombre = $nombre;
         $this->apellido = $apellido;
         $this->documento = $documento;
@@ -106,12 +107,16 @@ class Proveedor {
 
     function consultarReservas() {
         include 'dataBase.php';
-   
+        $p=new Proveedor();
         $db = new dataBase();
         $db->conectar();
+        
+        
         echo "<center><table border='1'>\n";      
         echo "<tr><td>Imagen</td><td>servicio reservado</td><td>nombre usuario</td><td>Costo</td></tr>\n";
-        $consulta1 = mysql_query("SELECT `idReserva`, `fecha`, `idUniforme`, `idUsuario`, `precio`, `cantidad` FROM `reserva` WHERE `idProveedor`=$this->idProveedor");
+      
+        $consulta1 = mysql_query("SELECT `idReserva`, `fecha`, `idUniforme`, `idUsuario`, `precio`, `cantidad` FROM `reserva` WHERE `idProveedor`=".$p->getIdProveedor());
+       
         while ($row = mysql_fetch_row($consulta1)) {
             $idUniforme = $row[2];
             $idUsuario = $row[3];

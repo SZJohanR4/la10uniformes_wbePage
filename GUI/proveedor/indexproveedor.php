@@ -21,11 +21,10 @@ and open the template in the editor.
         $documentoProveedor=$_GET['doc'];
         $db=new dataBase();
         $db->conectar();
-        
-        $consulta1=  mysql_query("SELECT `idProveedor`, `nombre`, `apellido`, `documento`, `email`, `password`, "
+        $consulta1=  mysql_query("SELECT `idProveedor`, `nombre`, `apellido`, `documento`, `email`, `contrasena`, "
                 . "`nroCuentaBancaria`, `direccion`, `estado` FROM `proveedor` WHERE `documento`=$documentoProveedor");
         while ($row = mysql_fetch_row($consulta1)) {
-            $idProveedor=$row[0];
+            $idProveedor=$row[0];       
             $nombre=$row[1];
             $apellido=$row[2];
             
