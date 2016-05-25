@@ -15,18 +15,18 @@ class Proveedor {
     private $apellido;
     private $documento;
     private $email;
-    private $contraseña;
+    private $password;
     private $nroCuentaBancaria;
     private $direccion;
     private $estado;
 
-    function construct($idProveedor, $nombre, $apellido, $documento, $email, $contraseña, $nroCuentaBancaria, $direccion, $estado) {
-        $this->idProveedor = 1;//$idProveedor;
+    function construct($idProveedor, $nombre, $apellido, $documento, $email, $password, $nroCuentaBancaria, $direccion, $estado) {
+        $this->idProveedor =$idProveedor ;
         $this->nombre = $nombre;
         $this->apellido = $apellido;
         $this->documento = $documento;
         $this->email = $email;
-        $this->contraseña = $contraseña;
+        $this->password = $password;
         $this->nroCuentaBancaria = $nroCuentaBancaria;
         $this->direccion = $direccion;
         $this->estado = $estado;
@@ -111,7 +111,7 @@ class Proveedor {
         $db->conectar();
         echo "<center><table border='1'>\n";      
         echo "<tr><td>Imagen</td><td>servicio reservado</td><td>nombre usuario</td><td>Costo</td></tr>\n";
-        $consulta1 = mysql_query("SELECT `idReserva`, `fecha`, `idUniforme`, `idUsuario`, `precio`, `cantidad` FROM `reserva` WHERE `idProveedor`=1");
+        $consulta1 = mysql_query("SELECT `idReserva`, `fecha`, `idUniforme`, `idUsuario`, `precio`, `cantidad` FROM `reserva` WHERE `idProveedor`=$this->idProveedor");
         while ($row = mysql_fetch_row($consulta1)) {
             $idUniforme = $row[2];
             $idUsuario = $row[3];
@@ -135,7 +135,7 @@ class Proveedor {
         $db->conectar();
         echo "<center><table border='1'>\n";
          echo "<tr><td>Proveedor</td><td>Imagen</td><td>Equipo</td><td>Categoria</td><td>Talla</td><td>Precio</td><td>Tela</td><td>Descuento</td><td>Replica</td><td>clasificacion</td><td>descripcion</td></tr>\n";
-       $consulta1 = mysql_query("SELECT `idUniforme`, `equipo`, `categoria`, `tallas`, `precio`, `tela`, `descuento`, `replica_original`, `clasificacion`, `descripcion` FROM `uniformes` WHERE `idProveedor`=1");
+       $consulta1 = mysql_query("SELECT `idUniforme`, `equipo`, `categoria`, `tallas`, `precio`, `tela`, `descuento`, `replica_original`, `clasificacion`, `descripcion` FROM `uniformes` WHERE `idProveedor`=$this->idProveedor");
         while ($row = mysql_fetch_row($consulta1)) {
             $idUniforme = $row[0];
             $consulta2 = mysql_query("SELECT `imagen` FROM `imagenes` WHERE `idUniforme`=$idUniforme;");

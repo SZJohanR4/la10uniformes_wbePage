@@ -20,7 +20,7 @@
 
     </div>
     <div id="m1">
-        <form  <f method="post" action="../../../Clases/Control.php" enctype="multipart/form-data" >
+        <form   method="post" action="../../../Clases/Control.php" enctype="multipart/form-data" >
                 <br>
                 <br>
                 Usuario: <br>
