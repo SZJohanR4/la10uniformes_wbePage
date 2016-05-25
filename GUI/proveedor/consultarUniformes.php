@@ -20,13 +20,7 @@ and open the template in the editor.
             <header>
                 <h1>La 10 Uniformes</h1>
                 <nav><ul>
-                        <li><a href="eliminarUniformes.php" target="_blank">Eliminar uniformes</a>
-        <a href="insertarUniforme.php" target="_blank">Insertar Uniforme</a>
-        <a href="salirSistema.php" target="_blank">Salir Sistema</a>
-        <a href="insertarProveedores.php" target="_blank">Insertar Proveedore</a>
-        <a href="uniformesPublicados.php" target="_blank">Consultar uniformes Publicados</a>
-        <a href="consultarUniformes.php" target="_blank">Consultar uniformes </a>
-        <a href="../../Chats/Proveedor.php" target="_blank">Chat</a>
+                      <li><a href="indexproveedor.php">Inicio</a></li>
         
                     </ul></nav>
             </header>
