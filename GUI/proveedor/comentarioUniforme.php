@@ -15,11 +15,15 @@
         <header>
             <h1>La 10 Uniformes</h1>
             <nav><ul>
-                    <li><a href="indexproveedor.php">Inicio</a></li>
+                     <?php
+                $idProveedor = $_GET['id'];
+                $doc="";
+                ?>
+                <li><a href="indexproveedor.php?id=<?php echo$idProveedor."&doc=".$doc;?>">Inicio</a></li>
                 </ul></nav>
         </header>
         <?php
-        $idUniforme = $_GET['id'];
+        $idUniforme = $_GET['idUnifor'];
         include '../../Clases/Calificacion.php';
         $verComentario = new Calificacion();
         $datos = array();

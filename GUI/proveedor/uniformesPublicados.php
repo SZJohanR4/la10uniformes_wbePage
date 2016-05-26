@@ -20,8 +20,12 @@ and open the template in the editor.
             <header>
                 <h1>La 10 Uniformes</h1>
                 <nav><ul>
-                        <li><a href="indexproveedor.php">Inicio</a></li>
-                          <a href="eliminarUniformes.php" target="_blank">Eliminar uniformes</a>
+                       <?php
+                $idProveedor = $_GET['id'];
+                $doc="";
+                ?>
+                <li><a href="indexproveedor.php?id=<?php echo$idProveedor."&doc=".$doc;?>">Inicio</a></li>
+        <a href="eliminarUniformes.php" target="_blank">Eliminar uniformes</a>
         <a href="insertarUniforme.php" target="_blank">Insertar Uniforme</a>
         <a href="salirSistema.php" target="_blank">Salir Sistema</a>
         <a href="insertarProveedores.php" target="_blank">Insertar Proveedore</a>
