@@ -7,10 +7,80 @@ and open the template in the editor.
     Created on : 18/05/2016, 10:44:16 PM
     Author     : Desktop
 */
+
+
+
+
+
+
+
+
+
+
+
+body{
+    background-image: url(../Componentes/Imagenes/fondoProveedor.jpeg);
+    
+}
 header{
     background: #327bd4;
     font-family: verdana;
     color: white;
+}
+
+*{
+    padding: 0px;
+     margin: 0px;
+     
+}
+
+#header{
+   
+    margin: auto;
+    width: 65%;
+    
+    font-family: Arial, Helvetica, sans-serif;
+  
+    
+}
+ul, ol{
+    list-style: none;
+    
+    
+}
+
+.nav li a{
+    background:  black;
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    display:block;
+}
+
+.nav li a:hover{
+    background-color: red;
+    
+}
+
+.nav > li{
+    float:left;
+    
+}
+
+.nav li ul{
+    display:none;
+    position: absolute;
+    min-width: 140px;
+    
+}
+.nav li:hover > ul{
+    display: block;
+}
+.nav li ul li{
+    position:relative;
+/*    right:  -140px;
+    top:0px;*/
+    
 }
 
 h1{

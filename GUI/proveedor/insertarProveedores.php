@@ -10,10 +10,10 @@
 <body>
 
     <div id="web">
-        <li><a href="indexproveedor.php">Inicio</a></li>
-        
+        <li><a href="../Administrador/Paginas/Administrar_Usuarios.html">Inicio</a></li>
+
         <header>
-           Proveedor
+            Proveedor
 
 
 
@@ -54,7 +54,7 @@
 
                         </tr>
                         <tr>
-                           <td><label for="correo">Correo Electronico: </label> <span>*</span></td>
+                            <td><label for="correo">Correo Electronico: </label> <span>*</span></td>
                             <td><input type="email" name="correo" required ></td>
                             <td><pre style='display:inline'>&#09;</pre></td>
                             <td><label for="contrasena">Contrasena: </label> <span>*</span></td>
@@ -71,17 +71,17 @@
                         <tr>
                             <td><label for="estado">Estado : </label><span>*</span></td>
                             <td><input type="text" name= "estado"  required /></td>
-                            
-                                </tr>
+
+                        </tr>
                     </table>
                 </fieldset>
                 <br>
-                <input type="submit" name="enviarProveedor" value="Enviar Proveedor">  
+                <input type="submit" name="enviarProveedor" value="Enviar Proveedor" id="enviarProveedor">  
 
             </form>
         </div>
 
-        
+
     </div>
 
 </body>

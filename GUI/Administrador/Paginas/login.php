@@ -7,6 +7,7 @@
     <link type="text/css" href="..\..\Componentes\CSS\css.css" rel="stylesheet"><!estilo principal>
 </head>
 <body>
+     
     <div id="barraSuperior"> 
         La 10 
         <br>
@@ -31,7 +32,7 @@
 
                 <br>
 
-                <input type="submit" name="Ingresar" value=" Ingresar ">
+                <input type="submit" name="Ingresar" value=" Ingresar " id="Ingresar">
 
 
                 </form>

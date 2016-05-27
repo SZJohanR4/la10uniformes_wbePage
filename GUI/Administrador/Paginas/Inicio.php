@@ -42,7 +42,8 @@ and open the template in the editor.
         <center>
             <a href="Administrar_Contenido.html" class="boton hover " id ="AdministrarContenido"  >  Administrar Contenido <img src="../../Componentes/Imagenes/icono1.jpg" id="icono1"></a>
             <a href="Administrar_Usuarios.html" class="boton hover" id ="botonRegistrarse">Administrar Usuarios <img src="../../Componentes/Imagenes/icono2.png" id="icono2"></a>
-            <a href="#" class="boton hover" id ="botonInformacion">Realizar Back-up <img src="../../Componentes/Imagenes/icono3.png" id="icono3"></a>
+            <a href="#" class="boton hover" id ="botonRealizarBackUp">Realizar Back-up <img src="../../Componentes/Imagenes/icono3.png" id="icono3"></a>
+            <a href="../../../Chats/Administrador.php" class="boton hover" id ="contactar">Contactar <img src="../../Componentes/Imagenes/contactar.png" id="icono3"></a>
         </center>
     </div>
 </body>

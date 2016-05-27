@@ -13,7 +13,7 @@
            <li><a href="indexproveedor.php">Inicio</a></li>
         
         <header>
-           Proveedor
+           UNIFORMES
 
 
 
@@ -24,7 +24,7 @@
         </div>
         <nav>
             <div id="nombreFormulario2">
-                Clientes
+                INSERTAR UNIFORME
 
             </div>
 
@@ -35,7 +35,7 @@
             <form  method="post" action="../../Clases/control.php" enctype="multipart/form-data">
                 <fieldset>
 
-                    <legend>Datos Cliente</legend>
+                    <legend>Datos UNIFORME</legend>
                     <table>
                         <tr>
 

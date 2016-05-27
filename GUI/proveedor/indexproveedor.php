@@ -9,16 +9,22 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>TODO supply a title</title>
+       
         <meta charset="UTF-8">
+        <title>Proveedor</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" href="..\Componentes\estilo.css" rel="stylesheet">
+
+        
+        
     </head>
     <body>
-
+ 
         <?php
         include '../../Clases/dataBase.php';
         include '../../Clases/Proveedor.php';
         $documentoProveedor = $_GET['doc'];
+    
         $db = new dataBase();
         $db->conectar();
 
@@ -57,10 +63,31 @@ and open the template in the editor.
         $proveedor = new Proveedor();
         $proveedor->construct($idProveedor, $nombre, $apellido, $documentoProveedor, $email, $password, $nroCuentaBancaria, $direccion, $estado)
         ?> 
-        <a href="solicitudesReserva.php?id=<?php echo$idProveedor; ?>">verReservas</a>
-        <a href="uniformesPublicados.php?id=<?php echo$idProveedor; ?>">consultarUniformesPublicados</a>
-        <a href="solicitarSuscripcion.php">suscripcion</a>
-        <a href="publicidadAsignada.php?id=<?php echo$idProveedor; ?>">ver publicidadAsignada</a>
+        
+       
+        
+        <div id="header">
+
+        <ul class ="nav">
+            
+
+            <li><a href="solicitudesReserva.php?id=<?php echo$idProveedor; ?>">VER RESERVAS</a>
+           
+                </li>
+                <li><a href="uniformesPublicados.php?id=<?php echo$idProveedor; ?>">UNIFORMES</a></li>
+            <li><a href="solicitarSuscripcion.php">SUBSCRIPCION</a></li>
+              <li><a href="publicidadAsignada.php?id=<?php echo$idProveedor; ?>">PUBLICIDAD</a></li>
+              <li><a href="../../Chats/Proveedor.php">CONTACTAR</a></li>
+              <li><a href="">SALIR</a></li>
+              
+
+
+      
+        </ul>
+    </div>
+        
+     
+        
 
     </body>
 </html>

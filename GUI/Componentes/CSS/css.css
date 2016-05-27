@@ -1,6 +1,14 @@
+
 body{
     background:  azure;
+    background-image:  url("../Imagenes/fondoLogin.jpg") ;
+background-repeat: no-repeat;
+background-size: 100% 100%;
+background-attachment: fixed;
+
+
 }
+
 
 div#m0{
     height: 10px;
@@ -45,7 +53,7 @@ div#m1{
   
    
 }
-input#ingresar{
+input#Ingresar{
    
     background:  royalblue;
     color: white;

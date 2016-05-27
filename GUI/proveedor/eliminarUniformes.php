@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title> Formulario </title>
-    <link type="text/css" href="../Componentes/CSS/Estilo2.css" rel="stylesheet"><!estilo principal>
+    <link type="text/css" href="../../Componentes/CSS/Estilo2.css" rel="stylesheet"><!estilo principal>
     <script type="text/javascript" src="../Componentes/js/jquery-1.9.1.js"></script>
     <script type="text/javascript" src="../Componentes/js/efecto.js"></script>
 </head>
