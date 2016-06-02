@@ -40,11 +40,7 @@ and open the template in the editor.
 
                             <li><a href="indexproveedor.php?id=<?php echo$idProveedor . "&doc=" . $doc; ?>">INICIO</a> </li>
                             <li> <a href="eliminarUniformes.php" target="_blank">ELIMINAR UNIFORMES</a></li>
-                            <li><a href="insertarUniforme.php" target="_blank">INSERTAR UNIFORME</a></li>
-                            
-
-                            <li>      <a href="uniformesPublicados.php" target="_blank">CONSULTAR UNIFORMES</a></li>
-
+                            <li><a href="insertarUniforme.php" target="_blank">INSERTAR UNIFORME</a></li>                          
                             <li><a href="salirSistema.php" target="_blank">SALIR</a></li>
 
 

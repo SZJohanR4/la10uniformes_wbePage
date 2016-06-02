@@ -20,7 +20,7 @@ and open the template in the editor.
 
 body{
     background-image: url(../Componentes/Imagenes/fondoProveedor.jpeg);
-    
+
 }
 header{
     background: #327bd4;
@@ -30,23 +30,23 @@ header{
 
 *{
     padding: 0px;
-     margin: 0px;
-     
+    margin: 0px;
+
 }
 
 #header{
-   
+
     margin: auto;
     width: 65%;
-    
+
     font-family: Arial, Helvetica, sans-serif;
-  
-    
+
+
 }
 ul, ol{
     list-style: none;
-    
-    
+
+
 }
 
 .nav li a{
@@ -59,28 +59,28 @@ ul, ol{
 
 .nav li a:hover{
     background-color: red;
-    
+
 }
 
 .nav > li{
     float:left;
-    
+
 }
 
 .nav li ul{
     display:none;
     position: absolute;
     min-width: 140px;
-    
+
 }
 .nav li:hover > ul{
     display: block;
 }
 .nav li ul li{
     position:relative;
-/*    right:  -140px;
-    top:0px;*/
-    
+    /*    right:  -140px;
+        top:0px;*/
+
 }
 
 h1{
@@ -180,24 +180,33 @@ form #der #fotografia input{
 
 }
 span{
-     color:red;
+    color:red;
+}
+#contenidoImagenes{
+    width: 90%;
+    height: 50%;
+    margin:auto;
+
 }
 
 #imagenComentario{ 
+    display: table-cell; 
+    
     width: 20%;
     height: 50%;
-    margin: auto;
+
 }
 
-#imagenComentario img{
-    width: 100%;
-    height: 100%;
+#imagenComentario img{  
+    width: 95%;
+    height:40%;
+margin-top: 10%;
 }
 #comentario{
-    width: 50%;
+    width: 70%;
     height: 20%;
     margin: auto;
-   border: solid #000 2px;
+    border: solid #000 2px;
     padding: 2%;
 }
 h2{

@@ -57,7 +57,10 @@ class Calificacion {
 
         $consulta1 = mysql_query("SELECT  `imagen`  FROM `imagenes` WHERE `idUniforme`=$idUniforme");
         while ($row = mysql_fetch_row($consulta1)) {
-            $datos[0] = $row[0]; 
+            echo' <div id="imagenComentario">';
+            echo '<IMG src="' . $row[0] . '">';
+            echo' </div>';
+//            $datos[0] = $row[0]; 
             
             $consulta2 = mysql_query("SELECT  `comentario` FROM `calificacion` WHERE `idUniforme`=$idUniforme");
             while ($row2 = mysql_fetch_row($consulta2)) {
