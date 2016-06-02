@@ -56,6 +56,10 @@ class administrador {
         
         
     }
+    
+function realizarBackUP(){
+    
+}
 
 
 }
