@@ -37,7 +37,7 @@
 
         <div id="comentario">
             <?php
-            echo $datos[1];
+       echo $datos[1];
             ?>
 
         </div>

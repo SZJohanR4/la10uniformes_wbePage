@@ -145,7 +145,7 @@ class Proveedor {
             $idUniforme = $row[0];
             $consulta2 = mysql_query("SELECT `imagen` FROM `imagenes` WHERE `idUniforme`=$idUniforme;");
             while ($row2 = mysql_fetch_row($consulta2)) {
-               echo"<tr><td>Proveedor 1</td><td><a href='../proveedor/comentarioUniforme.php?idUnifor=" . $row[0] . "'><img src='$row2[0]'></a></td><td>$row[1]</td><td>$row[2]</td><td>$row[3]</td><td>$row[4]</td><td>$row[5]</td><td>$row[6]</td><td>$row[7]</td><td>$row[8]</td><td>$row[9]</td></tr>";
+               echo"<tr><td>Proveedor 1</td><td><a href='../proveedor/comentarioUniforme.php?idUnifor=" . $row[0] . "&id=$idProveedor'><img src='$row2[0]'></a></td><td>$row[1]</td><td>$row[2]</td><td>$row[3]</td><td>$row[4]</td><td>$row[5]</td><td>$row[6]</td><td>$row[7]</td><td>$row[8]</td><td>$row[9]</td></tr>";
             }
         }
         echo"</center></table>";
@@ -169,9 +169,6 @@ class Proveedor {
     }
     
     
-    function verComentarios($idUniforme,$idProveedor){
-        //que lleguen los id pa (y)
-    }
     function insertarProveedor($idProveedor,$nombre,$apellido,$documento,$email,$contraseña,$cuenta,$direccion,$estado){
         include '../Clases/dataBase.php';
         $db = new dataBase();

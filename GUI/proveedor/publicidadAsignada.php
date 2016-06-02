@@ -26,6 +26,12 @@
         $datos = array();
         $publicidad = new Publicidad();
         $datos = $publicidad->consultarPulbicidad($idProveedor);
+        if($datos==NULL){
+            $datos[1]="no hay publicidad";
+            $datos[2]=" ";
+            $datos[0]=" ";
+                    
+        }
         ?>
 
 

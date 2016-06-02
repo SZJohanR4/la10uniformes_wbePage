@@ -73,7 +73,7 @@ class Publicidad {
         $db->conectar();
         $datos = array();
         
-        $consulta1 = mysql_query("SELECT `imagen`, `titulo`, `descripcion` FROM `publicidad` WHERE `idPublicidad`=$idProveedor")or die("la consulta fallo" . mysql_error());  
+        $consulta1 = mysql_query("SELECT `imagen`, `titulo`, `descripcion` FROM `publicidad` WHERE `idPublicidad`=$idProveedor");  
         while ($row = mysql_fetch_row($consulta1)) {
             $datos[0] = $row[0]; //ruta imagen
             $datos[1]=$row[1];//titulo

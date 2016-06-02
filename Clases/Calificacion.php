@@ -55,14 +55,18 @@ class Calificacion {
        
 
 
-        $consulta1 = mysql_query("SELECT  `imagen`  FROM `imagenes` WHERE `idUniforme`=$idUniforme")or die("la consulta fallo" . mysql_error());  
+        $consulta1 = mysql_query("SELECT  `imagen`  FROM `imagenes` WHERE `idUniforme`=$idUniforme");
         while ($row = mysql_fetch_row($consulta1)) {
             $datos[0] = $row[0]; 
             
-            $consulta2 = mysql_query("SELECT  `comentario` FROM `calificacion` WHERE `idUniforme`=$idUniforme")or die("la consulta fallo" . mysql_error());
+            $consulta2 = mysql_query("SELECT  `comentario` FROM `calificacion` WHERE `idUniforme`=$idUniforme");
             while ($row2 = mysql_fetch_row($consulta2)) {
+                if($row2[0]==NULL){
+                    $datos[1] =" no hay comentarios";
+                }else{
+                
                 $datos[1] = $row2[0];
-               
+                }
                 
             }
         }

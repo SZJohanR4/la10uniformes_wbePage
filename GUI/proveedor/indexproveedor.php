@@ -75,7 +75,7 @@ and open the template in the editor.
            
                 </li>
                 <li><a href="uniformesPublicados.php?id=<?php echo$idProveedor; ?>">UNIFORMES</a></li>
-            <li><a href="solicitarSuscripcion.php">SUBSCRIPCION</a></li>
+            <li><a href="solicitarSuscripcion.php?id=<?php echo$idProveedor; ?>">SUBSCRIPCION</a></li>
               <li><a href="publicidadAsignada.php?id=<?php echo$idProveedor; ?>">PUBLICIDAD</a></li>
               <li><a href="../../Chats/Proveedor.php">CONTACTAR</a></li>
               <li><a href="">SALIR</a></li>
