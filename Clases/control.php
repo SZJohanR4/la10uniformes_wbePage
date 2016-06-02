@@ -1,10 +1,12 @@
 <?php
 
 include '../Clases/Uniforme.php';
+include '../Clases/administrador.php';
 include '../Clases/Proveedor.php';
 include '../Clases/imagenes.php';
 include '../Clases/SistemaApp.php';
 include '../Clases/Sistema_De_Solicitud.php';
+include '../GUI/Administrador/Paginas/login.php';
 
 if (isset($_POST['enviarProveedor'])) {
     
@@ -52,8 +54,19 @@ if (isset($_POST['enviarUniforme'])) {
             $precio, $tela, $descuento,$replica,$clasificacion,$descripcion,$proveedor);
    
   echo '<script language="javascript">
-    window.location = " ../GUI/proveedor/insertarUniforme.php";
+    window.location = " ../GUI/proveedor/indexproveedor.php";
 </script>';
+}
+if (isset($_POST['eliminarUniformeadmin'])) {
+   
+    $uniforme= $_POST['selectelmiminar'];
+    $uniformes = new administrador();
+    $uniformes->EliminarUniformes($uniforme);
+    echo '<script language="javascript">
+    window.location = " ../GUI/Administrador/Paginas/login.php";
+</script>';
+   
+
 }
 if (isset($_POST['eliminarUniforme'])) {
    
@@ -116,7 +129,7 @@ if (isset($_POST['enviarImagen'])) {
     $imagen = new imagenes();
     $imagen->insertarImagen($idimagen, $idpropietario, $iduniforme, $tipos,$ruta, $descripcion);
       echo '<script language="javascript">
-    window.location = " ../GUI/proveedor/insertarUniforme.php";
+    window.location = " ../GUI/proveedor/indexproveedor.php";
 </script>';
 
   

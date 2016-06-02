@@ -30,7 +30,7 @@
 
         </nav>
 
-        <div id="paso1">
+         <div id="paso1"></div>
             <br>
             <form  method="post" action="../../Clases/control.php" enctype="multipart/form-data">
                 <fieldset>
@@ -66,3 +66,6 @@
                 <input type="submit" name="eliminarUniforme" value="Eliminar">  
 
             </form>
+            </div>
+    </body>
+</html>
