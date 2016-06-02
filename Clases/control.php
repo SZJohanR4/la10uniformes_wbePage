@@ -28,7 +28,7 @@ if (isset($_POST['enviarProveedor'])) {
    
    
   echo '<script language="javascript">
-    window.location = " ../GUI/proveedor/insertarUniforme.php";
+    window.location = " ../GUI/Administrador/Paginas/login.php";
 </script>';
 }
 
@@ -54,7 +54,7 @@ if (isset($_POST['enviarUniforme'])) {
             $precio, $tela, $descuento,$replica,$clasificacion,$descripcion,$proveedor);
    
   echo '<script language="javascript">
-    window.location = " ../GUI/proveedor/indexproveedor.php";
+    window.location = " ../GUI/proveedor/insertarUniforme.php";
 </script>';
 }
 if (isset($_POST['eliminarUniformeadmin'])) {
@@ -63,7 +63,7 @@ if (isset($_POST['eliminarUniformeadmin'])) {
     $uniformes = new administrador();
     $uniformes->EliminarUniformes($uniforme);
     echo '<script language="javascript">
-    window.location = " ../GUI/Administrador/Paginas/login.php";
+    window.location = " ../GUI/proveedor/indexproveedor.php";
 </script>';
    
 
@@ -129,7 +129,7 @@ if (isset($_POST['enviarImagen'])) {
     $imagen = new imagenes();
     $imagen->insertarImagen($idimagen, $idpropietario, $iduniforme, $tipos,$ruta, $descripcion);
       echo '<script language="javascript">
-    window.location = " ../GUI/proveedor/indexproveedor.php";
+    window.location = " ../GUI/proveedor/insertarUniforme.php";
 </script>';
 
   
